@@ -1,50 +1,60 @@
-let form = document.querySelector(".js-form");
-let form__field = document.querySelector(".js-amount");
-let form__select = document.querySelector(".js-select");
-let form__result = document.querySelector(".js-result");
+{
+    const calculateResult = (pln, currency) => {
+        let eur = 4.5565;
+        let usd = 3.7657;
+        let chf = 4.1258;
+        let gbp = 5.2426;
 
-let eur = 4.5565;
-let usd = 3.7657;
-let chf = 4.1258;
-let gbp = 5.2426;
+        switch (currency) {
+            case "EUR":
+                return (pln / eur).toFixed(2);
 
+            case "USD":
+                return (pln / usd).toFixed(2);
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
+            case "CHF":
+                return (pln / chf).toFixed(2);
 
-    let finalText = "Otrzymasz";
-    let finalResetText = "Wyczyszczono";
-    let currency = form__select.value;
-    let pln = +form__field.value;
+            case "GBP":
+                return (pln / gbp).toFixed(2);
 
-    let result;
-    switch (currency) {
-        case "EUR":
-            result = (pln / eur).toFixed(2);
-            form__result.innerText = `${finalText} ${result} EUR`;
-            break;
+            default:
+                form__result.innerText = "Coś nie działa!";
+        };
 
-        case "USD":
-            result = (pln / usd).toFixed(2);
-            form__result.innerText = `${finalText} ${result} USD`;
-            break;
+    };
 
-        case "CHF":
-            result = (pln / chf).toFixed(2);
-            form__result.innerText = `${finalText} ${result} CHF`;
-            break;
+    const updateResultText = (pln, result, currency) => {
+        const form__result = document.querySelector(".js-result");
+        const finalText = "Otrzymasz";
 
-        case "GBP":
-            result = (pln / gbp).toFixed(2);
-            form__result.innerText = `${finalText} ${result} GBP`;
-            break;
-
-        default:
-            form__result.innerText = "Coś nie działa!";
+        form__result.innerText = `${finalText} ${pln} PLN = ${result} ${currency}`;
     }
 
-    form.addEventListener("reset", () => {
-        form__result.innerText = `${finalResetText}`;
-        console.log("formularz został zresetowany");
-    });
-});
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+        
+        const form__field = document.querySelector(".js-amount");
+        const form__select = document.querySelector(".js-select");
+        const currency = form__select.value;
+        const pln = +form__field.value;
+        const result = calculateResult(pln, currency);
+        updateResultText(pln, result, currency)
+    }
+
+    const clearForm = () => {
+        const clean = document.querySelector(".js-result");
+        clean.innerHTML = "Wyczyszczono!";
+    };
+
+    const init = () => {
+        const form = document.querySelector(".js-form");
+        form.addEventListener("submit", onFormSubmit);
+
+        const buttonClean = document.querySelector(".js-reset");
+        buttonClean.addEventListener("click", clearForm);
+    };
+
+    init();
+
+}
