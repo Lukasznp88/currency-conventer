@@ -1,6 +1,6 @@
 # Currency Conventer
 
-![Curreny Conventer](conventer.gif)
+![Curreny Conventer](images/conventer.gif)
 
 ## Demo
 
