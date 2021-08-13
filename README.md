@@ -4,7 +4,7 @@
 
 ## Demo
 
-[Currency Conventer] https://lukasznp88.github.io/currency-conventer/
+[Currency Conventer] (https://lukasznp88.github.io/currency-conventer/)
 
 ## Description
 
