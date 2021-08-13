@@ -1,10 +1,10 @@
 # Currency Conventer
 
-![Curreny Conventer](images/conventer.gif)
+![Curreny_Conventer](images/conventer.gif)
 
 ## Demo
 
-[Currency Conventer] (https://lukasznp88.github.io/currency-conventer/)
+[Currency_Conventer] (https://lukasznp88.github.io/currency-conventer/)
 
 ## Description
 
