@@ -1,9 +1,9 @@
 {
     const calculateResult = (pln, currency) => {
-        let eur = 4.5565;
-        let usd = 3.7657;
-        let chf = 4.1258;
-        let gbp = 5.2426;
+        const eur = 4.5565;
+        const usd = 3.7657;
+        const chf = 4.1258;
+        const gbp = 5.2426;
 
         switch (currency) {
             case "EUR":
