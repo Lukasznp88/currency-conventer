@@ -34,10 +34,10 @@
     const onFormSubmit = (event) => {
         event.preventDefault();
         
-        const form__field = document.querySelector(".js-amount");
-        const form__select = document.querySelector(".js-select");
-        const currency = form__select.value;
-        const pln = +form__field.value;
+        const formField = document.querySelector(".js-amount");
+        const formSelect = document.querySelector(".js-select");
+        const currency = formSelect.value;
+        const pln = +formField.value;
         const result = calculateResult(pln, currency);
         updateResultText(pln, result, currency)
     }
