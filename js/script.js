@@ -43,8 +43,8 @@
     }
 
     const clearForm = () => {
-        const clean = document.querySelector(".js-result");
-        clean.innerHTML = "Wyczyszczono!";
+        const clearResult = document.querySelector(".js-result");
+        clearResult.innerHTML = "Wyczyszczono!";
     };
 
     const init = () => {
