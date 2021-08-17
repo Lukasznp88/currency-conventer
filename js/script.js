@@ -25,10 +25,10 @@
     };
 
     const updateResultText = (pln, result, currency) => {
-        const form__result = document.querySelector(".js-result");
+        const formResult = document.querySelector(".js-result");
         const finalText = "Otrzymasz";
 
-        form__result.innerText = `${finalText} ${pln} PLN = ${result} ${currency}`;
+        formResult.innerText = `${finalText} ${pln} PLN = ${result} ${currency}`;
     }
 
     const onFormSubmit = (event) => {
